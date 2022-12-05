@@ -10,7 +10,7 @@
 	     public static void LOG_IN(Connection conn, String id, String pw) throws SQLException {
 	 		//아이디, 비밀번호 입력
 	 		
-	 		System.out.print(id + pw);
+	 		System.out.println(id + pw);
 
 	 		/*
 	 		if( status.equals("CAR_INSERT")){

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/register_business.css">
 <title>KNU CAR</title>
@@ -10,57 +10,57 @@
 <div class="wrapper">
     <div class="logo_title">
         <span id="title">KNU CAR</span>
-        <span style="margin-left: 10px;">»ç¾÷ÀÚ È¸¿ø °¡ÀÔ</span>
+        <span style="margin-left: 10px;">ì‚¬ì—…ìž íšŒì› ê°€ìž…</span>
     </div>
     <div class="reg_form">
         <form action='../jsp/register_business_post.jsp' method='POST'>
-            <ul class="contents_name">È¸¿ø Á¤º¸ ÀÔ·Â</ul>
-            <li><input type="text" class="info_input_form" id="id" placeholder="¾ÆÀÌµð"><br></li>
-            <li><input type="password" class="info_input_form" id="pw" placeholder="ºñ¹Ð¹øÈ£"></li>
-            <ul class="contents_name">»ç¾÷ÀÚ¸í</ul>
-            <li><input type="text" class="info_input_form" id="name" placeholder="»ç¾÷ÀÚ µî·ÏÁõÀÇ »ç¾÷ÀÚ¸í ÀÔ·Â"></li>
-            <ul class="contents_name">»ç¾÷ÀÚ µî·Ï ¹øÈ£</ul>
+            <ul class="contents_name">íšŒì› ì •ë³´ ìž…ë ¥</ul>
+            <li><input type="text" class="info_input_form" name="id" id="id" placeholder="ì•„ì´ë””"><br></li>
+            <li><input type="password" class="info_input_form" name="pw"  id="pw" placeholder="ë¹„ë°€ë²ˆí˜¸"></li>
+            <ul class="contents_name">ì‚¬ì—…ìžëª…</ul>
+            <li><input type="text" class="info_input_form" name="name" id="name" placeholder="ì‚¬ì—…ìž ë“±ë¡ì¦ì˜ ì‚¬ì—…ìžëª… ìž…ë ¥"></li>
+            <ul class="contents_name">ì‚¬ì—…ìž ë“±ë¡ ë²ˆí˜¸</ul>
             <li>
                 <input type="tel" class="info_phone_input_form" id="phone1"> - 
                 <input type="tel" class="info_phone_input_form" id="phone2"> - 
                 <input type="tel" class="info_phone_input_form" id="phone3">
             </li>
-            <ul class="contents_name">°¡ÀÔÀÚ ÀÌ¸§</ul>
-            <li><input type="text" class="info_input_form" id="busi_name" placeholder="°¡ÀÔÇÏ´Â º»ÀÎÀÇ ÀÌ¸§À» ÀÔ·Â"></li>
-            <ul class="contents_name">°¡ÀÔÀÚÀÇ ÁÖ¹Îµî·Ï¹øÈ£</ul>
+            <ul class="contents_name">ê°€ìž…ìž ì´ë¦„</ul>
+            <li><input type="text" class="info_input_form" name="busi_name" id="busi_name" placeholder="ê°€ìž…í•˜ëŠ” ë³¸ì¸ì˜ ì´ë¦„ì„ ìž…ë ¥"></li>
+            <ul class="contents_name">ê°€ìž…ìžì˜ ì£¼ë¯¼ë“±ë¡ë²ˆí˜¸</ul>
             <li>
                 <div class="info_sex_form">
-                    <input type="text" class="info_ssn_input_form" id="birth" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+                    <input type="text" class="info_ssn_input_form" name="birth" id="birth" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
                 </div>
                  - 
                 <div class="info_sex_form">
-                    <input class="info_sex_input_form" type="text" id="sex" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"> 
+                    <input class="info_sex_input_form" type="text" name="sex" id="sex" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"> 
                     XXXXXX
                 </div>
             </li>
-            <ul class="contents_name">ÀÌ¸ÞÀÏ</ul>
-            <li><input type="text" class="info_input_form" id="email"></li>
-            <ul class="contents_name">´ëÇ¥ÀüÈ­</ul>
+            <ul class="contents_name">ì´ë©”ì¼</ul>
+            <li><input type="text" class="info_input_form" name="email" id="email"></li>
+            <ul class="contents_name">ëŒ€í‘œì „í™”</ul>
             <li>
-                <input type="tel" class="info_phone_input_form" id="phone1"> - 
-                <input type="tel" class="info_phone_input_form" id="phone2"> - 
-                <input type="tel" class="info_phone_input_form" id="phone3">
+                <input type="tel" class="info_phone_input_form" name="phone1" id="phone1"> - 
+                <input type="tel" class="info_phone_input_form" name="phone2" id="phone2"> - 
+                <input type="tel" class="info_phone_input_form" name="phone3" id="phone3">
             </li>
-            <ul class="contents_name">È¸»ç ¼ÒÀçÁö</ul>
+            <ul class="contents_name">íšŒì‚¬ ì†Œìž¬ì§€</ul>
             <div>
                 <li>
-                    <input class="info_addr_out" id="city" type="text" placeholder="Address" readonly>
-                    <input class="info_addr_btn" id="addr_num" type="text" placeholder="¿ìÆí¹øÈ£ °Ë»öÇÏ±â" readonly onclick="findAddr()"><br>
+                    <input class="info_addr_out" name="city" id="city" type="text" placeholder="Address" readonly>
+                    <input class="info_addr_btn" id="addr_num" type="text" placeholder="ìš°íŽ¸ë²ˆí˜¸ ê²€ìƒ‰í•˜ê¸°" readonly onclick="findAddr()"><br>
                 </li>
-                <li><input class="info_addr_input_form" id="addr" type="text" placeholder="»ó¼¼ ÁÖ¼Ò"></li>
+                <li><input class="info_addr_input_form" name="addr" id="addr" type="text" placeholder="ìƒì„¸ ì£¼ì†Œ"></li>
             </div>
-            <input class="submit_form" type="submit" value='È¸¿ø°¡ÀÔ'>
+            <input class="submit_form" type="submit" value='íšŒì›ê°€ìž…'>
         </form>
     </div>
 </div>
 
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<script src="/javascript/address_popup.js"></script>
+<script src="../javascript/address_popup.js"></script>
 
 </body>
 </html>
