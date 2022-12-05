@@ -1,0 +1,142 @@
+@charset "EUC-KR";
+
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    flex-direction: column;
+    font-family: noto;
+}
+
+input:focus {
+    outline: none;
+}
+
+.logo_title {
+    margin-top: 40px;
+    font-size: 30pt;
+    font-weight:bold
+}
+
+#title {
+    color: #BF7C26;
+}
+
+.reg_form {
+    margin-top: 20px;
+}
+
+.contents_name {
+    text-align: left;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.info_input_form {
+    height: 30px;
+    width: 600px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    padding-left: 10px;
+    font-size: 20px;
+    border : 0px;
+    border-bottom: 1px solid #CCCCCC;
+}
+
+.info_phone_input_form {
+    height: 30px;
+    width: 165px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    padding-left: 10px;
+    font-size: 20px;
+    border : 0px;
+    border-bottom: 1px solid #CCCCCC;
+    text-align: center;
+}
+
+.info_addr_out {
+    height: 40px;
+    width: 350px;
+    border: 3px solid #CCCCCC;
+    border-radius: 20px;
+    padding-left: 10px;
+    font-size: 20px;
+    text-align: center;
+    margin-left: 20px;
+}
+
+.info_addr_btn {
+    height: 40px;
+    width: 200px;
+    border: 3px solid #CCCCCC;
+    border-radius: 20px;
+    font-size: 20px;
+    text-align: center;
+    margin-left: 20px;
+    align-items: flex-end;
+}
+
+.info_addr_input_form {
+    height: 30px;
+    width: 600px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-top: 30px;
+    padding-left: 10px;
+    font-size: 20px;
+    border : 0px;
+    border-bottom: 1px solid #CCCCCC;
+}
+
+.info_sex_form {
+    display: inline-block;
+    height: 40px;
+    width: 305px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    margin-left: -7px;
+    font-size: 20px;
+    border : 0px;
+    border-bottom: 1px solid #CCCCCC;
+    align-items: left;
+    letter-spacing: 23px;
+}
+
+.info_ssn_input_form {
+    width: 275px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    font-size: 20px;
+    border : 0px;
+    padding-bottom: 0px;
+    letter-spacing: 23px;
+    text-align: left;
+}
+
+.info_sex_input_form {
+    width: 20px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    font-size: 20px;
+    border : 0px;
+    padding-bottom: 0px;
+}
+
+.submit_form {
+    height: 90px;
+    width: 325px;
+    float:center;
+    margin:0;
+    margin-top: 20px;
+    text-align: center;
+    border-radius: 70px;
+    border: 7px solid #E60000;
+    background-color: #FFF;
+    font-size: 20pt;
+    font-weight:bold;
+    align-self: center;
+}

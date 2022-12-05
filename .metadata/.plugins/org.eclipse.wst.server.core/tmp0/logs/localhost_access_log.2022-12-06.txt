@@ -109,3 +109,7 @@
 0:0:0:0:0:0:0:1 - - [06/Dec/2022:03:01:20 +0900] "GET /KNU_CAR/html/register_private.html HTTP/1.1" 304 -
 0:0:0:0:0:0:0:1 - - [06/Dec/2022:03:01:20 +0900] "GET /javascript/address_popup.js HTTP/1.1" 404 1105
 0:0:0:0:0:0:0:1 - - [06/Dec/2022:03:01:20 +0900] "GET /KNU_CAR/css/register_private.css HTTP/1.1" 304 -
+127.0.0.1 - - [06/Dec/2022:03:01:57 +0900] "GET / HTTP/1.1" 404 1074
+0:0:0:0:0:0:0:1 - - [06/Dec/2022:03:01:58 +0900] "GET /KNU_CAR/html/register_private.html HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [06/Dec/2022:03:01:58 +0900] "GET /KNU_CAR/css/register_private.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [06/Dec/2022:03:01:58 +0900] "GET /javascript/address_popup.js HTTP/1.1" 404 1105
