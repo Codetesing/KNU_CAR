@@ -1,9 +1,10 @@
+@charset "EUC-KR";
+
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
 
 .wrapper {
     display: flex;
     align-items: center;
-    min-height: 100vh;
     text-align: center;
     flex-direction: column;
     font-family: noto;

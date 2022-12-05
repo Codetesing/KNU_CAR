@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/register_memu.css">
+<title>KNU CAR</title>
+</head>
+<body>
+<div class="wrapper">
+    <div class="logo_title">
+        <span id="title">KNU CAR</span>
+        <span style="margin-left: 10px;">회원가입</span>
+    </div>
+    <button onClick="location.href='register_private.html'" style="margin-top: 150px;">개인 회원</button>
+    <button onClick="location.href='register_business.html'">사업자 회원</button>
+    <button onClick="location.href='register_dealer.html'">딜러 회원</button>
+</div>
+</body>
+</html>
