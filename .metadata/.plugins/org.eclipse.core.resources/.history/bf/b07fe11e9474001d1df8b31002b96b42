@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>KNU_CAR</title>
+</head>
+<body>
+<div>
+	<form action='../jsp.login_post.jsp' method='POST'>
+		<input type='text' name='id'><br>
+		<input type='text' name='pw'><br>
+		<input type='submit' value='submit'>
+	</form>
+</div>
+<div>
+	<form action='register_index.html' method='GET'>
+		<input type='submit' value='reg'>
+	</form>
+</div>
+</body>
+</html>
