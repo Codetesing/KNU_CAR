@@ -5,6 +5,7 @@
      import = "java.sql.Connection"
      import = "java.time.LocalDate"
      import = "java.time.format.DateTimeFormatter"
+     import = "javax.swing.JOptionPane;"
      %>
      <%!
 	     public static void LOG_IN(Connection conn, String id, String pw) throws SQLException {
@@ -56,7 +57,7 @@
 		}
 		else{
 			//아이디, 비밀번호를 확인해주세요!
-			//팝업창 
+			JOptionPane.showMessageDialog(null, "아이디, 비밀번호를 확인해주세요!");
 			response.sendRedirect("login_post.jsp");
 		}
 	%>

@@ -6,6 +6,7 @@
      import = "java.time.LocalDate"
      import = "java.time.format.DateTimeFormatter"
      import = "java.utill.*"
+     import = "javax.swing.JOptionPane;"
      %>
      
      <%!
@@ -92,6 +93,7 @@
 		}
 		else{
 			//이미 존재하는 아이디 입니다. 
+			JOptionPane.showMessageDialog(null, "이미 존재하는 아이디 입니다. ");
 			response.sendRedirect("register_dealer_post.jsp");
 		}
 		
