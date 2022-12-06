@@ -56,6 +56,8 @@
 		}
 		else{
 			//아이디, 비밀번호를 확인해주세요!
+			//팝업창 
+			response.sendRedirect("login_post.jsp");
 		}
 	%>
 </body>
