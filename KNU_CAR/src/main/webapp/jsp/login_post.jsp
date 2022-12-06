@@ -11,7 +11,6 @@
 	 		//아이디, 비밀번호 입력
 	 		
 	 		System.out.println(id + pw);
-
 	 		/*
 	 		if( status.equals("CAR_INSERT")){
 	 			CAR_INSERT(conn, id);

@@ -63,23 +63,36 @@
 		Connection conn = null;
 		Class.forName("oracle.jdbc.driver.OracleDriver");
 		conn = DriverManager.getConnection(url,user,pass);
+		
+		String query;
+		PreparedStatement pstmt;
+ 		ResultSet rs;
 	%>
 
 	<%
 		request.setCharacterEncoding("UTF-8");
 		id = request.getParameter("id");
-		pw = request.getParameter("pw");
-		name = request.getParameter("name");
-		birth = request.getParameter("birth");
-		String sex_temp = request.getParameter("sex");
-		if(sex_temp.equals("1") || sex_temp.equals("3"))
-			sex = "M";
-		else
-			sex = "W";
-		email = request.getParameter("email");
-		phone = request.getParameter("phone1") + "-" + request.getParameter("phone2") + "-" + request.getParameter("phone3");
-		city = request.getParameter("city");
-		addr = request.getParameter("addr");
+		query = "SELECT COUNT(*) FROM USER_ WHERE id = " + id;
+		pstmt = conn.prepareStatement(query);
+		rs = pstmt.executeQuery();
+		int num = rs.getInt(1); //존재하는 아이디인지 검증 
+		if(num == 0){
+			pw = request.getParameter("pw");
+			name = request.getParameter("name");
+			birth = request.getParameter("birth");
+			String sex_temp = request.getParameter("sex");
+			if(sex_temp.equals("1") || sex_temp.equals("3"))
+				sex = "M";
+			else
+				sex = "W";
+			email = request.getParameter("email");
+			phone = request.getParameter("phone1") + "-" + request.getParameter("phone2") + "-" + request.getParameter("phone3");
+			city = request.getParameter("city");
+			addr = request.getParameter("addr");
+		}
+		else{
+			//아이디 재입력 
+		}
 		
 		SIGN_IN(conn);
 		
