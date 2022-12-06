@@ -22,7 +22,6 @@ INDEX VERSION 1.131+C:\Users\ckdgh\Desktop\DataBase\.metadata\.plugins\org.eclip
 2619109819.index
 2793952612.index
 1858437783.index
-2492786659.index
 4038430804.index
 2405136895.index
 3306776145.index

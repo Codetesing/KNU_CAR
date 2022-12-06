@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/car_sell_notice.css">
+<title>KNU CAR</title>
+</head>
+<body>
+<div class="wrapper">
+    <div class="logo_title">
+        <span id="title">KNU CAR</span>
+        <span style="margin-left: 10px;">차량 등록</span>
+    </div>
+    <div class="reg_form">
+        <input class="submit_tab_selected_form" type="button" id="normal" value='일반 차량' onclick="select_normal()">
+        <input class="submit_tab_unselected_form" type="button" id="special" value='특수 차량' onclick="select_special()" style="margin-left: 60px;">
+        
+        <form action='../jsp/car_sell_post.jsp' method='POST'>
+            <div class="contents_name" style="margin-top: 40px;">차량 번호</div>
+            <input class="info_input_form" name="car_id" placeholder="예시) 12 도 1234">
+            <div class="contents_name">희망 가격</div>
+            <div class="info_price_form">
+                <input class="info_price_input_form" type="text" name="sell_price" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"> 
+                만원
+            </div>
+            <div class="contents_name">세부 사항</div>
+            <textarea class="notice_input_form" type="textarea" name="sell_notice"
+            rows="10" cols="55" placeholder="차량에 관련된 세부 사항을 자유롭게 기술해 주세요.
+(튜닝 여부, 흡연 여부 등)"></textarea>
+            <input type="hidden" id="car_type" name="car_type" value="normal"><br>
+            <input class="submit_form" type="submit" value='다 음'>
+        </form>
+    </div>
+</div>
+<script src="../javascript/sell_tab.js"></script>
+</body>
+</html>

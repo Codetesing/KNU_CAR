@@ -24,7 +24,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>LOGIN_POST</title>
 </head>
 <body>
