@@ -37,12 +37,26 @@
 		Connection conn = null;
 		Class.forName("oracle.jdbc.driver.OracleDriver");
 		conn = DriverManager.getConnection(url,user,pass);
+		
+		String query;
+		PreparedStatement pstmt;
+ 		ResultSet rs;
 	%>	
 
 	<%
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
-		LOG_IN(conn, id, pw);
+		
+		query = "SELECT COUNT(*) FROM USER_ WHERE id = " + id + "and pw = " + pw;
+		pstmt = conn.prepareStatement(query);
+		rs = pstmt.executeQuery();
+		int num = rs.getInt(1); //존재하는 아이디인지 검증 
+		if(num != 0) {
+			LOG_IN(conn, id, pw);
+		}
+		else{
+			//아이디, 비밀번호를 확인해주세요!
+		}
 	%>
 </body>
 </html>

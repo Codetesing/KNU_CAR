@@ -91,8 +91,10 @@
 			addr = request.getParameter("addr");
 		}
 		else{
-			//아이디 재입력 
+			//이미 존재하는 아이디 입니다. 
+			response.sendRedirect("register_private_post.jsp");
 		}
+		
 		
 		SIGN_IN(conn);
 		
