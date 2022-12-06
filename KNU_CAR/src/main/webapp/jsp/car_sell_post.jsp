@@ -26,7 +26,7 @@
      
      <%!
      public void CAR_INSERT(Connection conn, String id) throws SQLException {
-    	 PreparedStatement pstmt;
+    	PreparedStatement pstmt;
  		ResultSet rs;
  		
  		String query;
