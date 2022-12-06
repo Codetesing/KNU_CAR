@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/normal_car_sell_notice.css">
+<title>KNU CAR</title>
+</head>
+<body>
+<div class="wrapper">
+    <div class="logo_title">
+        <span id="title">KNU CAR</span>
+        <span style="margin-left: 10px;">일반 차량 등록</span>
+    </div>
+    <div class="reg_form">
+        <div class="car_info_text">차량 정보 입력</div>
+        <form action='../jsp/normal_car_post.jsp' method='POST'>
+            <div class="contents_name">제조사
+                <select class="info_select" name="manufacturer">
+                    <option>현대</option>
+                    <option>기아</option>
+                    <option>쉐보레</option>
+                    <option>벤츠</option>
+                </select>
+            </div>
+            <div class="contents_name">모델명
+                <input class="info_input_form" name="car_model" style="margin-left: 90px;">
+            </div>
+            <div class="contents_name">연료 종류
+                <input type="button" class="fuel_selected_input_form" value="휘발유" style="margin-left: 50px;" onclick="change_btn(event)">
+                <input type="button" class="fuel_unselected_input_form" value="경유" onclick="change_btn(event)">
+                <input type="button" class="fuel_unselected_input_form" value="LPG" onclick="change_btn(event)"> <br>
+                <input type="button" class="fuel_unselected_input_form" value="수소" style="margin-left: 190px;" onclick="change_btn(event)">
+                <input type="button" class="fuel_unselected_input_form" value="전기" style="margin-left: -3px;" onclick="change_btn(event)">
+                <input type="button" class="fuel_unselected_input_form" value="하이브리드" style="width: 120px; margin-left:-3px" onclick="change_btn(event)">
+            </div>
+            <input type="hidden" id="fuel" name="fuel" value="휘발유">
+            <div class="contents_name">변속기
+                <select class="info_select" name="gearbox">
+                    <option>자동</option>
+                    <option>수동</option>
+                    <option>세미오토</option>
+                    <option>CVT</option>
+                    <option>기타</option>
+                </select>
+            </div>
+            <div class="contents_name">운행 거리
+                <div class="info_price_form">
+                    <input class="info_price_input_form" type="text" name="mileage" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"> 
+                    Km
+                </div>
+            </div>
+            <div class="contents_name">차량 연식
+                <input class="info_date_input_form" type="date" name="maked_date">
+            </div>
+            <div class="contents_name">등록 일자
+                <input class="info_date_input_form" type="date" name="enrolled_date">
+            </div>
+            <div class="contents_name">옵션 선택</div>
+            <div class="input_check_group">
+                <input class="input_check_box_value" name="car_option" type="checkbox" style="margin-left: 80px;" value="EXCLUSIVE"> EXCLUSIVE
+                <input class="input_check_box_value" name="car_option" type="checkbox" value="PRESTAGE"> PRESTAGE
+                <input class="input_check_box_value" name="car_option" type="checkbox" value="DELUX"> DELUX
+                <input class="input_check_box_value" name="car_option" type="checkbox" value="썬루프"> 썬루프
+            </div>
+            <div class="contents_name">사고기록 조회 동의</div>
+            <div style="margin-top: 30px; font-size: 20px; text-align: left; margin-left: 50px; border: 3px solid #797977; border-radius: 20px; padding: 20px;">
+                <div style="margin-right: 20px;">차량의 사고기록 조회를 동의하시겠습니까?</div>
+                <div>해당 정보는 향후 2년간 보관됩니다.</div>
+                <div>동의하지 않아도 판매는 가능합니다.</div>
+                <div style="font-size: 20px; font-weight:bold; margin-left: 350px; margin-top: 10px;"><input type="checkbox" name="car_accident"> 동의합니다.</div>
+            </div>
+            <input class="submit_form" type="submit" value='회원가입'>
+        </form>
+    </div>
+</div>
+<script src="../javascript/fuel_tab.js"></script>
+</body>
+</html>

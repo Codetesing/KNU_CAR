@@ -1,0 +1,194 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 300;
+    src: url(/fonts/NotoSansKr/NotoSansKR-Light.woff2) format('woff2'),
+    url(/fonts/NotoSansKr/NotoSansKR-Light.woff) format('woff'),
+    url(/fonts/NotoSansKr/NotoSansKR-Light.otf) format('opentype');
+    }
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    src: url(/fonts/NotoSansKr/NotoSansKR-Regular.woff2) format('woff2'),
+    url(/fonts/NotoSansKr/NotoSansKR-Regular.woff) format('woff'),
+    url(/fonts/NotoSansKr/NotoSansKR-Regular.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 700;
+    src: url(/fonts/NotoSansKr/NotoSansKR-Bold.woff2) format('woff2'),
+    url(/fonts/NotoSansKr/NotoSansKR-Bold.woff) format('woff'),
+    url(/fonts/NotoSansKr/NotoSansKR-Bold.otf) format('opentype');
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    flex-direction: column;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+input:focus {
+    outline: none;
+}
+
+.logo_title {
+    margin-top: 40px;
+    font-size: 30pt;
+    font-weight:bold
+}
+
+#title {
+    color: #BF7C26;
+}
+
+.reg_form {
+    margin-top: 20px;
+}
+
+.contents_name {
+    text-align: left;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 40px;
+    padding-left: 70px;
+}
+
+.car_info_text {
+    text-align: left;
+    font-size: 35px;
+    font-weight: bold;
+    margin-top: 30px;
+    width: 550px;
+}
+
+.info_input_form {
+    height: 30px;
+    width: 300px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 50px;
+    padding-left: 20px;
+    font-size: 25px;
+    border : 0px;
+    border-bottom: 1px solid #CCCCCC;
+}
+
+.info_select {
+    height: 50px;
+    width: 300px;
+    margin-left: 90px;
+    font-size: 30px;
+    border-radius: 20px;
+    border: 3px solid #CCCCCC;
+    text-align: center;
+}
+
+.info_date_input_form {
+    height: 30px;
+    width: 300px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 50px;
+    padding-left: 20px;
+    font-size: 25px;
+    border : 0px;
+    border-bottom: 1px solid #CCCCCC;
+}
+
+.fuel_selected_input_form {
+    height: 40px;
+    width: 90px;
+    float:center;
+    margin:0;
+    margin-top: 20px;
+    text-align: center;
+    border-radius: 70px;
+    border: 3px solid #E60000;
+    color: #E60000;
+    background-color: #FFF;
+    font-size: 15pt;
+    font-weight:bold;
+    align-self: center;
+    margin-left: 10px;
+}
+
+.fuel_unselected_input_form {
+    height: 40px;
+    width: 90px;
+    float:center;
+    margin:0;
+    margin-top: 20px;
+    text-align: center;
+    border-radius: 70px;
+    border: 3px solid #797977;
+    color: #797977;
+    background-color: #FFF;
+    font-size: 15pt;
+    font-weight:bold;
+    align-self: center;
+    margin-left: 10px;
+}
+
+.submit_form {
+    height: 90px;
+    width: 325px;
+    float:center;
+    margin:0;
+    margin-top: 30px;
+    margin-bottom: 100px;
+    text-align: center;
+    border-radius: 70px;
+    border: 7px solid #E60000;
+    background-color: #FFF;
+    font-size: 20pt;
+    font-weight:bold;
+    align-self: center;
+}
+
+.info_price_form {
+    display: inline-block;
+    height: 40px;
+    width: 300px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    margin-left: 50px;
+    font-size: 25px;
+    border : 0px;
+    border-bottom: 1px solid #CCCCCC;
+    align-items: right;
+    letter-spacing: 0px;
+    font-weight: normal;
+}
+
+.info_price_input_form {
+    width: 200px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    font-size: 30px;
+    border : 0px;
+    padding-bottom: 0px;
+    text-align: right;
+}
+
+.input_check_group {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+input[type=checkbox] {
+    width: 20px;
+    height: 20px;
+    padding: 10px;
+    margin-left: 20px;  
+}

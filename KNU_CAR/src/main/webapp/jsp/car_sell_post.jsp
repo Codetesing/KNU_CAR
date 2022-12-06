@@ -99,6 +99,10 @@
 	 	car_type = request.getParameter("car_type");
 		
 		CAR_INSERT(conn, user_id);
+		
+		// car_type == normal -> normal_car_sell_notice
+		// car_type == special -> special_car_sell_notice 
+		// get 형태로 parameter user_id, car_id 전송
 	%>
 </body>
 </html>
