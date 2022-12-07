@@ -10,7 +10,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>LOGIN_POST</title>
+<title>KNU CAR</title>
 </head>
 <body>
 	<%

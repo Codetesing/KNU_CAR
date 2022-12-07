@@ -81,7 +81,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>CAR_POST</title>
+<title>KNU CAR</title>
 </head>
 <body>
 	<%

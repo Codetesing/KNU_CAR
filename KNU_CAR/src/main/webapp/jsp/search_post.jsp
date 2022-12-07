@@ -128,7 +128,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>LOGIN_POST</title>
+<title>KNU CAR</title>
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/search_post.css">
 </head>
@@ -226,10 +226,18 @@
 				
 				CAR_INFORM(conn, rs.getString(1), rs.getString(2), rs.getString(3));
 				
+				if(car_type.equals("normal"))
+					out.print("<form action='../jsp/normal_car_detail_info.jsp' method='POST' id='" + rs.getString(1) + "'>");
+				else if(car_type.equals("special"))
+					out.print("<form action='../jsp/special_car_detail_info.jsp' method='POST' id='" + rs.getString(1) + "'>");
+				
+				out.print("<input type='hidden' id='selected_car_id' name='selected_car_id' value='"+ rs.getString(1) + "'>");
+				out.print("<input type='hidden' id='selected_user_id' name='selected_user_id' value='"+ rs.getString(2) + "'>");
+				
 				if(row_cnt == 0)
-					out.println("<table class='contents_table' style='margin-top: 100px;'>");
+					out.println("<table class='contents_table' style='margin-top: 100px;' onclick='detail_info(event)' id='" + rs.getString(1) + "'>");
 				else
-					out.println("<table class='contents_table'>");
+					out.println("<table class='contents_table' onclick='detail_info(event)' id='" + rs.getString(1) + "'>");
 				
 				out.println("<tr>");
 				
@@ -248,6 +256,7 @@
 				out.println("<td style='width:200px'>"+rs.getString(5));%>만원</td><%;
 				out.println("</tr>");
 				out.println("</table>");
+				out.println("</form>");
 				row_cnt++;
 			}
 	    %>

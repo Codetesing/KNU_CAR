@@ -125,7 +125,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>CAR_POST</title>
+<title>KNU CAR</title>
 <script src="../javascript/noback.js"></script>
 </head>
 <body onload="noBack();" onpageshow="if(event.persisted) noBack();" onunload="">
