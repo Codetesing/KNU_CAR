@@ -20,7 +20,7 @@ IDE : ECLIPSE 2021-09
 
 -----------------------
 
-##시연 영상
+## 시연 영상
 
 https://youtu.be/XJqNUtScZzE
 
