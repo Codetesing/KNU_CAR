@@ -6,21 +6,6 @@
      import = "java.time.LocalDate"
      import = "java.time.format.DateTimeFormatter"
      %>
-     <%!
-	     public static void LOG_IN(Connection conn, String id, String pw) throws SQLException {
-	 		//아이디, 비밀번호 입력
-	 		
-	 		System.out.println(id + pw);
-
-	 		/*
-	 		if( status.equals("CAR_INSERT")){
-	 			CAR_INSERT(conn, id);
-	 	    }
-	 	    else if( status.equals("CAR_SEARCH")){
-	 	    	CAR_SEARCH(conn);
-	 	    }*/
-	 	}
-     %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,12 +23,30 @@
 		Connection conn = null;
 		Class.forName("oracle.jdbc.driver.OracleDriver");
 		conn = DriverManager.getConnection(url,user,pass);
+		
+		String query;
+		PreparedStatement pstmt;
+ 		ResultSet rs;
 	%>	
 
 	<%
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
-		LOG_IN(conn, id, pw);
+		
+		query = "SELECT COUNT(*) FROM USER_ WHERE id = '" + id + "' and pw = '" + pw + "'";
+		pstmt = conn.prepareStatement(query);
+		rs = pstmt.executeQuery();
+		if(rs.next()) {
+			int num = rs.getInt(1); //존재하는 아이디인지 검증 
+			if(num != 0) {
+				session.setAttribute("user_id", id);
+				response.sendRedirect("../jsp/search_post.jsp");
+			}
+			else{
+				//아이디, 비밀번호를 확인해주세요!
+				out.println("<script>alert('아이디, 비밀번호를 확인해주세요!'); history.back();</script>");
+			}
+		}
 	%>
 </body>
 </html>

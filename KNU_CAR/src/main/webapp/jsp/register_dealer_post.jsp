@@ -6,9 +6,8 @@
      import = "java.time.LocalDate"
      import = "java.time.format.DateTimeFormatter"
      import = "java.utill.*"
-     import = "javax.swing.JOptionPane;"
      %>
-     
+
      <%!
      	String id;
      	String pw;
@@ -22,7 +21,7 @@
 		String birth;
 		String user_type = "dealer";
      %>
-     
+
      <%!
      public void SIGN_IN(Connection conn) throws SQLException {
  		PreparedStatement pstmt;
@@ -64,42 +63,27 @@
 		Connection conn = null;
 		Class.forName("oracle.jdbc.driver.OracleDriver");
 		conn = DriverManager.getConnection(url,user,pass);
-		
-		String query;
-		PreparedStatement pstmt;
- 		ResultSet rs;
 	%>
 
 	<%
 		request.setCharacterEncoding("UTF-8");
 		id = request.getParameter("id");
-		query = "SELECT COUNT(*) FROM USER_ WHERE id = " + id;
-		pstmt = conn.prepareStatement(query);
-		rs = pstmt.executeQuery();
-		int num = rs.getInt(1); //존재하는 아이디인지 검증 
-		if(num == 0){
-			pw = request.getParameter("pw");
-			name = request.getParameter("name");
-			birth = request.getParameter("birth");
-			String sex_temp = request.getParameter("sex");
-			if(sex_temp.equals("1") || sex_temp.equals("3"))
-				sex = "M";
-			else
-				sex = "W";
-			email = request.getParameter("email");
-			phone = request.getParameter("phone1") + "-" + request.getParameter("phone2") + "-" + request.getParameter("phone3");
-			city = request.getParameter("city");
-			addr = request.getParameter("addr");
-		}
-		else{
-			//이미 존재하는 아이디 입니다. 
-			JOptionPane.showMessageDialog(null, "이미 존재하는 아이디 입니다. ");
-			response.sendRedirect("register_dealer_post.jsp");
-		}
-		
+		pw = request.getParameter("pw");
+		name = request.getParameter("name");
+		birth = request.getParameter("birth");
+		String sex_temp = request.getParameter("sex");
+		if(sex_temp.equals("1") || sex_temp.equals("3"))
+			sex = "M";
+		else
+			sex = "W";
+		email = request.getParameter("email");
+		phone = request.getParameter("phone1") + "-" + request.getParameter("phone2") + "-" + request.getParameter("phone3");
+		city = request.getParameter("city");
+		addr = request.getParameter("addr");
 		
 		SIGN_IN(conn);
 		
+		response.sendRedirect("../html/login_index.html");
 	%>
 </body>
 </html>

@@ -5,21 +5,6 @@
      import = "java.sql.Connection"
      import = "java.time.LocalDate"
      import = "java.time.format.DateTimeFormatter"
-     import = "javax.swing.JOptionPane;"
-     %>
-     <%!
-	     public static void LOG_IN(Connection conn, String id, String pw) throws SQLException {
-	 		//아이디, 비밀번호 입력
-	 		
-	 		System.out.println(id + pw);
-	 		/*
-	 		if( status.equals("CAR_INSERT")){
-	 			CAR_INSERT(conn, id);
-	 	    }
-	 	    else if( status.equals("CAR_SEARCH")){
-	 	    	CAR_SEARCH(conn);
-	 	    }*/
-	 	}
      %>
 <!DOCTYPE html>
 <html>
@@ -48,17 +33,19 @@
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
 		
-		query = "SELECT COUNT(*) FROM USER_ WHERE id = " + id + "and pw = " + pw;
+		query = "SELECT COUNT(*) FROM USER_ WHERE id = '" + id + "' and pw = '" + pw + "'";
 		pstmt = conn.prepareStatement(query);
 		rs = pstmt.executeQuery();
-		int num = rs.getInt(1); //존재하는 아이디인지 검증 
-		if(num != 0) {
-			LOG_IN(conn, id, pw);
-		}
-		else{
-			//아이디, 비밀번호를 확인해주세요!
-			JOptionPane.showMessageDialog(null, "아이디, 비밀번호를 확인해주세요!");
-			response.sendRedirect("login_post.jsp");
+		if(rs.next()) {
+			int num = rs.getInt(1); //존재하는 아이디인지 검증 
+			if(num != 0) {
+				session.setAttribute("user_id", id);
+				response.sendRedirect("../jsp/search_post.jsp");
+			}
+			else{
+				//아이디, 비밀번호를 확인해주세요!
+				out.println("<script>alert('아이디, 비밀번호를 확인해주세요!'); history.back();</script>");
+			}
 		}
 	%>
 </body>

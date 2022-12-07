@@ -3,7 +3,7 @@
     <%@ page language="java"
      import = "java.text.*,java.sql.*"
      import = "java.sql.Connection"
-     import = "java.time.LocalDate"
+     import = "java.time.LocalDateTime"
      import = "java.time.format.DateTimeFormatter"
      import = "java.utill.*"
      %>
@@ -16,7 +16,7 @@
      	
      	// 수정 요망
      	// test = private
-     	String user_id = "private";
+     	String user_id;
      	
      	// 구현은 일단 일반만
      	String sell_type = "일반";
@@ -32,12 +32,18 @@
  		String query;
  		int num;
  		
- 		LocalDate now = LocalDate.now();
- 	    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
- 	    String registration_date = now.format(formatter);//현재날짜 
- 		
- 		query = "SELECT COUNT(*) FROM CAR WHERE car_id='" + car_id + "'";
+ 		query="ALTER session set NLS_DATE_FORMAT = 'YYYY-MM-DD HH24:MI:SS'";
  		pstmt = conn.prepareStatement(query);
+ 		rs = pstmt.executeQuery();
+ 		
+ 		LocalDateTime now = LocalDateTime.now();
+ 	    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+ 	    String registration_date = now.format(formatter);//현재날짜 
+ 	    
+ 		query = "SELECT COUNT(*) FROM CAR WHERE car_id='" + car_id + "'";
+
+ 	    
+ 	    pstmt = conn.prepareStatement(query);
  		rs = pstmt.executeQuery();
  		
  		if(rs.next()) {
@@ -47,8 +53,8 @@
  		 				+ car_id + "','"
  		 				+ user_id + "','"
  		 				+ car_type + "','"
- 		 				+ sell_type + "','"
- 		 				+ sell_price + "','"
+ 		 				+ sell_type + "',"
+ 		 				+ sell_price + ",'"
  		 				+ registration_date + "','" 
  		 				+ sell_notice + "','"
  		 				+ selling_state + "')";
@@ -66,7 +72,7 @@
  		else {
  			query = "Error";
  		}
- 		//System.out.println(query);
+ 		System.out.println(query);
  	    pstmt = conn.prepareStatement(query);
  		rs = pstmt.executeQuery();
  	}
@@ -97,12 +103,19 @@
 	 	sell_price = request.getParameter("sell_price");
 	 	sell_notice = request.getParameter("sell_notice");
 	 	car_type = request.getParameter("car_type");
+	 	user_id = (String)session.getAttribute("user_id");
 		
 		CAR_INSERT(conn, user_id);
 		
 		// car_type == normal -> normal_car_sell_notice
 		// car_type == special -> special_car_sell_notice 
 		// get 형태로 parameter user_id, car_id 전송
+		session.setAttribute("car_id", car_id);
+		
+		if(car_type.equals("normal"))
+			response.sendRedirect("../html/normal_car_sell_notice.html");
+		else if(car_type.equals("special"))
+			response.sendRedirect("../html/special_car_sell_notice.html");
 	%>
 </body>
 </html>

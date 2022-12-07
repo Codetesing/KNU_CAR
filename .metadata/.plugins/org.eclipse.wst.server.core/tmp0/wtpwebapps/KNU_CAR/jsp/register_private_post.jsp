@@ -7,7 +7,7 @@
      import = "java.time.format.DateTimeFormatter"
      import = "java.utill.*"
      %>
-     
+
      <%!
      	String id;
      	String pw;
@@ -21,7 +21,7 @@
 		String birth;
 		String user_type = "private";
      %>
-     
+
      <%!
      public void SIGN_IN(Connection conn) throws SQLException {
  		PreparedStatement pstmt;
@@ -83,6 +83,7 @@
 		
 		SIGN_IN(conn);
 		
+		response.sendRedirect("../html/login_index.html");
 	%>
 </body>
 </html>

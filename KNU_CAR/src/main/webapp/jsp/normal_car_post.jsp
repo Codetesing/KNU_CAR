@@ -19,11 +19,8 @@
 		String[] option;
 		String[] agreements;
      	
-     	// 수정 요망
-     	// test = private
-     	// test = 12가 1234
-     	String user_id = "private";
-     	String car_id = "12가 1234";
+     	String user_id;
+     	String car_id;
      %>
      
      <%!
@@ -121,8 +118,9 @@
 <head>
 <meta charset="UTF-8">
 <title>CAR_POST</title>
+<script src="../javascript/noback.js"></script>
 </head>
-<body>
+<body onload="noBack();" onpageshow="if(event.persisted) noBack();" onunload="">
 	<%
 		String serverIP = "localhost";
 		String strSID = "orcl";
@@ -147,9 +145,13 @@
 		maked_date = request.getParameter("maked_date");
 		option = request.getParameterValues("car_option");
 		agreements = request.getParameterValues("car_accident");
+		user_id = (String)session.getAttribute("user_id");
+		car_id = (String)session.getAttribute("car_id");
 		
 		// user_id, car_id 입력 받아야함.
 		NORMAL_CAR_INSERT(conn, user_id, car_id);
+		
+		response.sendRedirect("../jsp/search_post.jsp");
 	%>
 </body>
 </html>
